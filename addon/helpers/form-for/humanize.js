@@ -1,9 +1,5 @@
-import Ember from 'ember';
 import { humanize } from '../../utils/strings';
-
-const {
-  Helper: { helper }
-} = Ember;
+import { helper } from '@ember/component/helper';
 
 export function formForHumanize([string]) {
   return humanize(string);

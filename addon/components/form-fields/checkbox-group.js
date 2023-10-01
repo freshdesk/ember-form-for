@@ -1,10 +1,7 @@
-import Ember from 'ember';
 import layout from '../../templates/components/form-fields/checkbox-group';
 
-const {
-  Component,
-  get
-} = Ember;
+import Component from '@ember/component';
+import { get } from '@ember/object';
 
 const CheckboxGroupComponent = Component.extend({
   tagName: '',

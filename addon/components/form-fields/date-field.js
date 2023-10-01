@@ -1,8 +1,6 @@
-import Ember from 'ember';
 import TextField from './text-field';
 import { toDateString } from '../../utils/date';
-
-const { isEmpty } = Ember;
+import { isEmpty } from '@ember/utils';
 
 export default TextField.extend({
   type: 'date',

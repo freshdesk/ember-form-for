@@ -1,15 +1,9 @@
-import Ember from 'ember';
 import titlecase from '../utils/titlecase';
-
-const {
-  assert,
-  computed,
-  get,
-  guidFor,
-  set,
-  typeOf,
-  Mixin
-} = Ember;
+import Mixin from '@ember/object/mixin';
+import { assert } from '@ember/debug';
+import { computed, get, set } from '@ember/object';
+import { typeOf } from '@ember/utils';
+import { guidFor } from '@ember/object/internals';
 
 export default Mixin.create({
   instrumentDisplay: '{{form-field}}',

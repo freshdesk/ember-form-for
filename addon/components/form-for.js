@@ -1,14 +1,9 @@
-import Ember from 'ember';
 import layout from '../templates/components/form-for';
-
-const {
-  Component,
-  get,
-  inject: { service },
-  isPresent,
-  run: { schedule },
-  set
-} = Ember;
+import Component from '@ember/component';
+import { get, set } from '@ember/object';
+import { inject as service } from '@ember/service';
+import { isPresent } from '@ember/utils';
+import { schedule } from '@ember/runloop';
 
 const FormForComponent = Component.extend({
   layout,

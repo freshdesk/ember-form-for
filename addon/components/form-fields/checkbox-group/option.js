@@ -1,17 +1,14 @@
-import Ember from 'ember';
 import layout from '../../../templates/components/form-fields/checkbox-group/option';
 
 import { humanize } from '../../../utils/strings';
 
-const {
-  Component,
-  String: { dasherize },
-  computed,
-  computed: { or },
-  get,
-  inject: { service },
-  isPresent
-} = Ember;
+import Component from '@ember/component';
+import { computed, get } from '@ember/object';
+import { or } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
+import { isPresent } from '@ember/utils';
+import { dasherize } from '@ember/string';
+import { humanize } from '../utils/strings';
 
 export default Component.extend({
   tagName: '',
