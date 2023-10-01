@@ -8,7 +8,6 @@ import { or } from '@ember/object/computed';
 import { inject as service } from '@ember/service';
 import { isPresent } from '@ember/utils';
 import { dasherize } from '@ember/string';
-import { humanize } from '../utils/strings';
 
 export default Component.extend({
   tagName: '',
