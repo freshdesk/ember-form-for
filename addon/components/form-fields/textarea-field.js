@@ -1,10 +1,7 @@
-import Ember from 'ember';
 import layout from '../../templates/components/form-fields/textarea-field';
 
-const {
-  Component,
-  set
-} = Ember;
+import Component from '@ember/component';
+import { set } from '@ember/object';
 
 const TextareaFieldComponent = Component.extend({
   tagName: '',

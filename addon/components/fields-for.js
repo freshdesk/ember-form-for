@@ -1,10 +1,6 @@
-import Ember from 'ember';
 import layout from '../templates/components/fields-for';
-
-const {
-  Component,
-  set
-} = Ember;
+import Component from '@ember/component';
+import { set } from '@ember/object';
 
 const FieldsForComponent = Component.extend({
   layout,

@@ -1,23 +1,19 @@
 import Ember from 'ember';
 import layout from '../templates/components/form-field';
 
+import Component from '@ember/component';
+import { assert } from '@ember/debug';
+import { computed, get, set } from '@ember/object';
+import { notEmpty, or, reads } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
+import { isEmpty, isPresent } from '@ember/utils';
+import { dasherize } from '@ember/string';
 import { humanize } from '../utils/strings';
+import { guidFor } from '@ember/object/internals';
+import { observer } from '@ember/object';
 
 const {
-  Component,
-  String: { dasherize },
-  assert,
-  computed,
-  computed: { notEmpty, or, reads },
-  get,
-  getWithDefault,
-  guidFor,
-  inject: { service },
-  isEmpty,
-  isPresent,
-  mixin,
-  observer,
-  set
+  mixin
 } = Ember;
 
 const FormFieldComponent = Component.extend({
@@ -164,14 +160,16 @@ const FormFieldComponent = Component.extend({
   },
 
   value: computed('rawValue', function() {
-    let serializeValue = getWithDefault(this, 'serializeValue', (value) => value);
+    let serializeValue = get(this, 'serializeValue');
+    serializeValue = serializeValue !== undefined ? serializeValue : (value) => value;
     return serializeValue(get(this, 'rawValue'));
   }),
 
   actions: {
     processUpdate(object, propertyName, value) {
       let rawValue = get(this, 'rawValue');
-      let deserializeValue = getWithDefault(this, 'deserializeValue', (value) => value);
+      let deserializeValue = get(this, 'deserializeValue');
+      deserializeValue = deserializeValue !== undefined ? deserializeValue : (value) => value;
       get(this, 'update')(object, propertyName, deserializeValue(value, rawValue));
     }
   }

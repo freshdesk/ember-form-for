@@ -1,8 +1,8 @@
-import Ember from 'ember';
 import DynamicAttributeBindings from 'ember-one-way-controls/-private/dynamic-attribute-bindings';
 import layout from '../../templates/components/form-controls/button';
-
-const { Component, get, set, inject: { service } } = Ember;
+import Component from '@ember/component';
+import { get, set } from '@ember/object';
+import { inject as service } from '@ember/service';
 
 const Button = Component.extend(DynamicAttributeBindings, {
   layout,

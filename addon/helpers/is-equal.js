@@ -1,8 +1,4 @@
-import Ember from 'ember';
 import isEqual from '../utils/is-equal';
-
-const {
-  Helper: { helper }
-} = Ember;
+import { helper } from '@ember/component/helper';
 
 export default helper(([a, b]) => isEqual(a, b));

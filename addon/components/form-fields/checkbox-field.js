@@ -1,10 +1,7 @@
-import Ember from 'ember';
 import layout from '../../templates/components/form-fields/checkbox-field';
+import Component from '@ember/component';
+import { set } from '@ember/object';
 
-const {
-  Component,
-  set
-} = Ember;
 
 const CheckboxFieldComponent = Component.extend({
   tagName: '',
