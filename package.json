@@ -51,6 +51,9 @@
   "engines": {
     "node": ">= 4"
   },
+  "overrides": {
+    "node-sass": "7.0.1"
+  },
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "demoURL": "http://martndemus.github.io/ember-form-for"
