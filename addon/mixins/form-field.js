@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import titlecase from '../utils/titlecase';
+// import titlecase from '../utils/titlecase';
 
 const {
   assert,
@@ -37,6 +37,8 @@ export default Mixin.create({
 
   _setupLabel() {
     set(this, 'label',
-      get(this, 'label') || titlecase(get(this, 'propertyName')));
+      get(this, 'label')
+      // || titlecase(get(this, 'propertyName'))
+      );
   }
 });
